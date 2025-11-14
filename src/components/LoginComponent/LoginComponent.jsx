@@ -4,8 +4,6 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 function LoginComponent() {
-  const apiUrl = import.meta.env.VITE_API_URL;
-  
   // const apiUrl = import.meta.env.VITE_API_BASE_URL;
   // const apiVersion = import.meta.env.VITE_APP_API_VERSION;
   const [value, setValue] = useState({
@@ -23,7 +21,7 @@ function LoginComponent() {
     e.preventDefault();
     axios
       .post(
-        `${apiUrl}/api/v1/user/login`,
+        `/api/v1/user/login`,
         {
           email: value.email,
           password: value.password,
